@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Портфолио Даниила Шибанова — AI/Product Engineer. Агентные системы, финансовая аналитика и developer tools." />
+  <meta name="theme-color" content="#090a08" />
+  <title>Даниил Шибанов — AI / Product Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="ambient ambient-lime" aria-hidden="true"></div>
+  <div class="ambient ambient-coral" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="shell nav-inner">
+      <a class="logo magnetic" href="#top" aria-label="На главную">
+        <span>DS</span><i></i><small>AI LAB</small>
+      </a>
+      <nav aria-label="Основная навигация">
+        <a href="#work">Проекты</a>
+        <a href="#method">Подход</a>
+        <a href="#contact">Контакт</a>
+      </nav>
+      <a class="nav-github magnetic" href="https://github.com/shubandaniil-beep" target="_blank" rel="noreferrer">
+        <span class="status-dot"></span> GitHub <b>↗</b>
+      </a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero shell">
+      <div class="hero-copy reveal">
+        <div class="availability"><span class="status-dot"></span> AVAILABLE FOR AMBITIOUS BUILDS <b>2026</b></div>
+        <h1>
+          <span>Строю цифровые</span>
+          <em>мозги.</em>
+        </h1>
+        <p class="hero-lead">Превращаю сложные идеи в AI‑продукты, которые выглядят смело, работают надёжно и решают настоящие задачи.</p>
+        <div class="hero-actions">
+          <a class="cta cta-primary magnetic" href="#work"><span>Исследовать проекты</span><b>↓</b></a>
+          <a class="cta cta-ghost magnetic" href="https://github.com/shubandaniil-beep" target="_blank" rel="noreferrer">15 репозиториев <b>↗</b></a>
+        </div>
+        <div class="hero-footnote"><span>AI SYSTEMS</span><i></i><span>FINTECH</span><i></i><span>PRODUCT ENGINEERING</span></div>
+      </div>
+
+      <div class="hero-stage reveal" data-delay="120">
+        <canvas id="neural-canvas" aria-hidden="true"></canvas>
+        <div class="neural-core" aria-hidden="true">
+          <div class="core-halo core-halo-one"></div>
+          <div class="core-halo core-halo-two"></div>
+          <div class="core-sphere"><span>DS</span></div>
+        </div>
+        <div class="float-chip chip-one"><span>47</span> skills transferred</div>
+        <div class="float-chip chip-two"><span>69</span> offline tests</div>
+        <div class="float-chip chip-three"><i></i> system online</div>
+        <div class="telemetry-card glass">
+          <div class="telemetry-head"><span>LIVE TELEMETRY</span><b id="local-time">00:00:00</b></div>
+          <div class="telemetry-row"><span>ideas → prototypes</span><strong>FAST</strong></div>
+          <div class="telemetry-row"><span>systems thinking</span><strong>ON</strong></div>
+          <div class="pulse-line"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <code>$ build --with-curiosity<span>_</span></code>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>AGENTIC SYSTEMS</span><i>✦</i><span>RISK INTELLIGENCE</span><i>✦</i><span>RAPID PROTOTYPING</span><i>✦</i><span>WORLD MODELS</span><i>✦</i><span>AGENTIC SYSTEMS</span><i>✦</i><span>RISK INTELLIGENCE</span><i>✦</i><span>RAPID PROTOTYPING</span><i>✦</i><span>WORLD MODELS</span><i>✦</i>
+      </div>
+    </div>
+
+    <section class="work shell" id="work">
+      <div class="section-intro reveal">
+        <div><p class="kicker">01 / SELECTED WORK</p><h2>Проекты, которые<br /><em>говорят за меня.</em></h2></div>
+        <p>От AI‑оркестрации до цифрового двойника мировой экономики. Нажми на карточку — внутри мини‑кейс.</p>
+      </div>
+
+      <div class="project-controls reveal">
+        <div class="filters" role="group" aria-label="Фильтры проектов">
+          <button class="filter active" type="button" data-filter="all">Все <sup>6</sup></button>
+          <button class="filter" type="button" data-filter="ai">AI systems</button>
+          <button class="filter" type="button" data-filter="fintech">Fintech</button>
+          <button class="filter" type="button" data-filter="tools">Tools</button>
+        </div>
+        <label class="project-search">
+          <span>⌘ K</span>
+          <input id="project-search" type="search" placeholder="найти проект..." autocomplete="off" />
+        </label>
+      </div>
+
+      <div class="project-grid" id="project-grid">
+        <article class="project-card project-tir project-wide reveal" tabindex="0" role="button" data-project="tir" data-tags="ai tools" aria-label="Открыть кейс TIR">
+          <div class="card-shine" aria-hidden="true"></div>
+          <div class="card-top"><span>01 / FEATURED</span><span class="card-category">DEVELOPER INTELLIGENCE</span></div>
+          <div class="project-visual tir-visual" aria-hidden="true">
+            <div class="tir-ring ring-a"></div><div class="tir-ring ring-b"></div><div class="tir-ring ring-c"></div>
+            <div class="tir-core">TIR<small>47 SKILLS</small></div>
+            <div class="tir-node node-a">CORE LOOP</div><div class="tir-node node-b">PIPELINES</div><div class="tir-node node-c">DOMAIN</div>
+          </div>
+          <div class="card-copy"><h3>TIR</h3><p>Интеллектуальный слой для Claude Code: 47 навыков, пайплайны и механика переноса экспертизы.</p></div>
+          <div class="card-bottom"><span>CLAUDE CODE · SKILLS · PIPELINES</span><span class="card-open">Открыть кейс <b>↗</b></span></div>
+        </article>
+
+        <article class="project-card project-opspilot reveal" tabindex="0" role="button" data-project="opspilot" data-tags="ai tools" aria-label="Открыть кейс OpsPilot">
+          <div class="card-shine" aria-hidden="true"></div>
+          <div class="card-top"><span>02 / 06</span><span class="card-category">LLM ORCHESTRATION</span></div>
+          <div class="project-visual flow-visual" aria-hidden="true">
+            <div class="flow-node active">ROUTE</div><i></i><div class="flow-node">PLAN</div><i></i><div class="flow-node">RUN × N</div><i></i><div class="flow-node">VERIFY</div>
+            <div class="flow-status"><span></span> ALL SYSTEMS NOMINAL</div>
+          </div>
+          <div class="card-copy"><h3>OpsPilot</h3><p>Production‑grade движок для надёжной оркестрации LLM‑агентов без npm‑зависимостей.</p></div>
+          <div class="card-bottom"><span>NODE.JS · ZERO DEPS</span><span class="card-open">Кейс <b>↗</b></span></div>
+        </article>
+
+        <article class="project-card project-settlement reveal" tabindex="0" role="button" data-project="settlement" data-tags="fintech ai" aria-label="Открыть кейс Settlement">
+          <div class="card-shine" aria-hidden="true"></div>
+          <div class="card-top"><span>03 / 06</span><span class="card-category">TREASURY AI</span></div>
+          <div class="project-visual match-visual" aria-hidden="true">
+            <svg viewBox="0 0 420 180" preserveAspectRatio="none"><path d="M48 24 C150 24 220 46 372 46"/><path d="M48 76 C150 76 230 132 372 132"/><path d="M48 130 C160 130 210 88 372 88"/><path class="match-hot" d="M48 158 C170 158 250 158 372 158"/></svg>
+            <div class="match-side side-left"><i></i><i></i><i></i><i></i></div><div class="match-score">100%<small>MATCH PRECISION</small></div><div class="match-side side-right"><i></i><i></i><i></i><i></i></div>
+          </div>
+          <div class="card-copy"><h3>Settlement</h3><p>Сверка B2B‑платежей через graph matching и ML‑детекцию аномалий.</p></div>
+          <div class="card-bottom"><span>PYTHON · FASTAPI · ML</span><span class="card-open">Кейс <b>↗</b></span></div>
+        </article>
+
+        <article class="project-card project-prism project-wide reveal" tabindex="0" role="button" data-project="prism" data-tags="fintech ai" aria-label="Открыть кейс PRISM">
+          <div class="card-shine" aria-hidden="true"></div>
+          <div class="card-top"><span>04 / 06</span><span class="card-category">RISK INTELLIGENCE</span></div>
+          <div class="project-visual prism-visual" aria-hidden="true">
+            <div class="prism-score"><small>ANOMALY SCORE</small><strong>92.4</strong><span>HIGH RISK</span></div>
+            <svg viewBox="0 0 640 210" preserveAspectRatio="none"><defs><linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff684c" stop-opacity=".48"/><stop offset="1" stop-color="#ff684c" stop-opacity="0"/></linearGradient></defs><path class="chart-area" d="M0,170 L55,150 L110,158 L165,130 L220,144 L275,106 L330,124 L385,88 L440,111 L495,55 L550,76 L595,20 L640,48 L640,210 L0,210 Z"/><path class="chart-line" d="M0,170 L55,150 L110,158 L165,130 L220,144 L275,106 L330,124 L385,88 L440,111 L495,55 L550,76 L595,20 L640,48"/><circle cx="595" cy="20" r="6"/></svg>
+            <div class="detectors"><span>EWMA</span><span>CUSUM</span><span>MAD</span><span>Hampel</span><span>IForest</span><span>FFT</span></div>
+          </div>
+          <div class="card-copy"><h3>PRISM</h3><p>Финансовые аномалии через ансамбль из шести детекторов — с понятным объяснением каждой находки.</p></div>
+          <div class="card-bottom"><span>ANOMALY DETECTION · CLAUDE</span><span class="card-open">Открыть кейс <b>↗</b></span></div>
+        </article>
+
+        <article class="project-card project-terra reveal" tabindex="0" role="button" data-project="terra" data-tags="fintech" aria-label="Открыть кейс TERRA">
+          <div class="card-shine" aria-hidden="true"></div>
+          <div class="card-top"><span>05 / 06</span><span class="card-category">WORLD MODEL</span></div>
+          <div class="project-visual world-visual" aria-hidden="true">
+            <div class="world-orbit orbit-one"></div><div class="world-orbit orbit-two"></div><div class="world-globe"><i></i><b></b></div>
+            <div class="world-label label-one">12 REGIONS</div><div class="world-label label-two">7 CONTOURS</div><div class="world-label label-three">→ 2100</div>
+          </div>
+          <div class="card-copy"><h3>TERRA</h3><p>Цифровой двойник мировой экономики для сценариев политики, климата и финансовых стресс‑тестов.</p></div>
+          <div class="card-bottom"><span>PYTHON · NUMPY · MODELING</span><span class="card-open">Кейс <b>↗</b></span></div>
+        </article>
+
+        <article class="project-card project-hypecut reveal" tabindex="0" role="button" data-project="hypecut" data-tags="tools" aria-label="Открыть кейс Hypecut">
+          <div class="card-shine" aria-hidden="true"></div>
+          <div class="card-top"><span>06 / 06</span><span class="card-category">MEDIA AUTOMATION</span></div>
+          <div class="project-visual wave-visual" aria-hidden="true"><div class="wave-bars" id="wave-bars"></div><div class="playhead"></div><i class="play-icon">▶</i><span>02:14 / HIGHLIGHT FOUND</span></div>
+          <div class="card-copy"><h3>Hypecut</h3><p>Находит сильные моменты в видео по громкости и смене сцен — локально, быстро, без облака.</p></div>
+          <div class="card-bottom"><span>PYTHON · FFMPEG · CLI</span><span class="card-open">Кейс <b>↗</b></span></div>
+        </article>
+      </div>
+      <p class="empty-state" id="empty-state">Ничего не найдено. Попробуй «AI», «Python» или «fintech».</p>
+    </section>
+
+    <section class="method shell" id="method">
+      <div class="section-intro reveal"><div><p class="kicker">02 / HOW I BUILD</p><h2>Инженерия с<br /><em>продуктовым нервом.</em></h2></div><p>Красивый интерфейс — это обещание. Архитектура, тесты и ясная логика должны это обещание выполнить.</p></div>
+      <div class="principles">
+        <article class="principle reveal"><span>01</span><div><h3>Сначала — проблема</h3><p>Разбираю домен, риски и реальную цену ошибки до выбора технологии.</p></div><b>DISCOVER</b></article>
+        <article class="principle reveal"><span>02</span><div><h3>Потом — система</h3><p>Собираю проверяемый pipeline с observability, fallback‑логикой и human gate.</p></div><b>ENGINEER</b></article>
+        <article class="principle reveal"><span>03</span><div><h3>И только потом — магия</h3><p>Добавляю AI там, где он усиливает продукт, а не служит декорацией.</p></div><b>AMPLIFY</b></article>
+      </div>
+    </section>
+
+    <section class="manifesto">
+      <div class="shell manifesto-inner reveal">
+        <p>I DON’T JUST CALL AN API.</p>
+        <h2>Я строю систему<br />вокруг <em>интеллекта.</em></h2>
+        <div class="manifesto-stats"><div><strong>15</strong><span>PUBLIC REPOS</span></div><div><strong>47</strong><span>TIR SKILLS</span></div><div><strong>6</strong><span>DEEP DOMAINS</span></div><div><strong>∞</strong><span>CURIOSITY</span></div></div>
+      </div>
+    </section>
+
+    <section class="contact shell" id="contact">
+      <div class="contact-panel reveal">
+        <div class="contact-orb" aria-hidden="true"><i></i><i></i><i></i></div>
+        <p class="kicker">03 / LET’S BUILD</p>
+        <h2>Есть сложная идея?<br /><em>Тем интереснее.</em></h2>
+        <p>Открыт к амбициозным AI‑продуктам, автоматизации и задачам, где нужен инженерный азарт.</p>
+        <a class="cta cta-primary magnetic" href="https://github.com/shubandaniil-beep" target="_blank" rel="noreferrer"><span>Связаться через GitHub</span><b>↗</b></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer shell"><span>© 2026 ДАНИИЛ ШИБАНОВ</span><span>AI / PRODUCT ENGINEER</span><a href="#top">НАВЕРХ ↑</a></footer>
+
+  <dialog class="case-dialog" id="case-dialog">
+    <button class="dialog-close" type="button" aria-label="Закрыть кейс">×</button>
+    <p class="kicker" id="dialog-kicker">PROJECT DEEP DIVE</p>
+    <h2 id="dialog-title"></h2>
+    <p class="dialog-lead" id="dialog-lead"></p>
+    <div class="dialog-grid"><div><span>ЗАДАЧА</span><p id="dialog-problem"></p></div><div><span>РЕШЕНИЕ</span><p id="dialog-solution"></p></div></div>
+    <div class="dialog-stack" id="dialog-stack"></div>
+    <a class="cta cta-primary" id="dialog-link" href="#" target="_blank" rel="noreferrer"><span>Открыть репозиторий</span><b>↗</b></a>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
