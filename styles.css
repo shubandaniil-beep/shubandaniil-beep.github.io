@@ -107,6 +107,12 @@ body.cursor-active .cursor-glow { opacity: 1; }
 }
 
 .nav-inner { height: 92px; display: flex; align-items: center; justify-content: space-between; }
+.header-actions { display: flex; align-items: center; gap: 12px; }
+.language-switcher { display: inline-flex; padding: 3px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,.025); }
+.language-button { min-width: 34px; padding: 6px 7px; border: 0; border-radius: 999px; color: var(--muted); background: transparent; font: 9px var(--mono); letter-spacing: .04em; cursor: pointer; transition: color .2s ease, background .2s ease; }
+.language-button:hover { color: var(--ink); }
+.language-button.active { color: #11140a; background: var(--lime); }
+.language-button:focus-visible { outline: 2px solid var(--lime); outline-offset: 2px; }
 
 .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
 .logo > span { font-size: 23px; font-weight: 800; letter-spacing: -1.7px; }
@@ -531,6 +537,8 @@ body.cursor-active .cursor-glow { opacity: 1; }
   .shell { width: min(100% - 34px, 620px); }
   .nav-inner { height: 74px; }
   .site-header nav { display: none; }
+  .header-actions { gap: 7px; }
+  .language-button { min-width: 31px; padding: 6px 5px; }
   .nav-github { padding: 9px 12px; }
   .hero { padding-top: 130px; gap: 10px; }
   .hero h1 { margin-top: 26px; font-size: clamp(60px, 19vw, 88px); }

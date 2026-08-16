@@ -55,6 +55,51 @@ const projectDetails = {
   }
 };
 
+const englishProjectDetails = {
+  tir: { lead: "Transferred Intelligence Repository — a portable expertise layer for Claude Code.", problem: "Practical techniques and domain knowledge usually remain in a developer's head and get lost between tasks, teams, and sessions.", solution: "The plugin packages knowledge into 47 reusable skills: a core loop, domain modules, pipeline scenarios, and meta-tools." },
+  opspilot: { lead: "A reliable orchestration engine that turns a raw prompt into a verifiable operational result.", problem: "A single LLM call does not handle complex operations well: it offers little control over risk, budget, parallel work, or result quality.", solution: "A seven-step pipeline routes the task, plans the work, launches workers, verifies the response, requests approval, and saves an audit trail." },
+  settlement: { lead: "A B2B reconciliation engine for matching an accounting ledger to a bank statement.", problem: "Fees, FX, date shifts, batch payments, and damaged references turn manual reconciliation into a slow, error-prone process.", solution: "Maximum-weight bipartite matching finds correspondences, while Isolation Forest and KMeans rank remaining exceptions for an analyst." },
+  prism: { lead: "An explainable engine for detecting spikes and structural shifts in financial flows.", problem: "A single detector only sees one type of deviation and can confuse seasonality, noise, and a real financial threat.", solution: "Spectral analysis plus an ensemble of EWMA, CUSUM, Hampel, MAD, and Isolation Forest produce a 0–100 score and an explanation through the Claude API." },
+  terra: { lead: "A digital twin of the global economy for testing decisions before reality pays the price.", problem: "Climate, banking, currency, and social effects of policy are intertwined, while traditional models often look at them separately.", solution: "96 economic nodes across 12 macro-regions are linked by seven feedback loops and simulated through 2100 with stress tests." },
+  hypecut: { lead: "A local tool that automatically cuts the strongest moments from video.", problem: "Finding highlights manually takes hours, while heavyweight cloud models are expensive, slow, and often unnecessary.", solution: "EBU R128 loudness and FFmpeg scene detection combine into a score; adjacent moments are merged into clips or a finished highlight reel." }
+};
+
+const translations = { en: {
+  home: "Home", language: "Language selection", close: "Close case", filters: "Project filters",
+  nav: { work: "Work", method: "Approach", contact: "Contact" },
+  hero: { title: "I build digital", emphasis: "brains.", lead: "I turn complex ideas into AI products that look bold, work reliably, and solve real problems.", cta: "Explore projects", repos: "15 repositories" },
+  work: { title: "Projects that<br /><em>speak for me.</em>", lead: "From AI orchestration to a digital twin of the global economy. Open a card to see the mini case study." },
+  filters: { all: "All" }, search: "find a project...",
+  projects: { tir: "An intelligence layer for Claude Code: 47 skills, pipelines, and a method for transferring expertise.", opspilot: "A production-grade engine for reliable LLM-agent orchestration with no npm dependencies.", settlement: "B2B payment reconciliation using graph matching and ML anomaly detection.", prism: "Financial anomaly detection through an ensemble of six detectors, with a clear explanation for every finding.", terra: "A digital twin of the global economy for policy, climate, and financial stress-test scenarios.", hypecut: "Finds standout moments in video from loudness and scene changes — locally, quickly, without the cloud." },
+  case: { open: "Open case <b>↗</b>", short: "Case <b>↗</b>" }, empty: "Nothing found. Try “AI”, “Python”, or “fintech”.",
+  method: { title: "Engineering with<br /><em>product instinct.</em>", lead: "A beautiful interface is a promise. Architecture, tests, and clear logic need to keep it." },
+  principles: { one: { title: "The problem first", lead: "I unpack the domain, risks, and real cost of failure before choosing technology." }, two: { title: "Then the system", lead: "I assemble a verifiable pipeline with observability, fallback logic, and a human gate." }, three: { title: "Only then, the magic", lead: "I add AI where it strengthens the product, not where it merely decorates it." } },
+  manifesto: { title: "I build a system<br />around <em>intelligence.</em>" }, contact: { title: "A difficult idea?<br /><em>Even better.</em>", lead: "Open to ambitious AI products, automation, and problems that call for engineering curiosity.", cta: "Reach out on GitHub" },
+  footer: { name: "© 2026 DANIIL SHIBANOV", top: "BACK TO TOP ↑" }, dialog: { problem: "CHALLENGE", solution: "SOLUTION", repository: "Open repository" },
+  meta: { title: "Daniil Shibanov — AI / Product Engineer", description: "Daniil Shibanov's portfolio — AI/Product Engineer. Agentic systems, financial analytics, and developer tools." }
+}};
+
+const getTranslation = (key) => key.split(".").reduce((value, part) => value && value[part], translations.en);
+const languageButtons = [...document.querySelectorAll(".language-button")];
+document.querySelectorAll("[data-i18n]").forEach(element => { element.dataset.ruText = element.textContent; });
+document.querySelectorAll("[data-i18n-html]").forEach(element => { element.dataset.ruHtml = element.innerHTML; });
+document.querySelectorAll("[data-i18n-placeholder]").forEach(element => { element.dataset.ruPlaceholder = element.placeholder; });
+document.querySelectorAll("[data-i18n-aria]").forEach(element => { element.dataset.ruAria = element.getAttribute("aria-label"); });
+const setLanguage = language => {
+  const english = language === "en";
+  document.documentElement.lang = language;
+  document.title = english ? translations.en.meta.title : "Даниил Шибанов — AI / Product Engineer";
+  document.querySelector('meta[name="description"]').content = english ? translations.en.meta.description : "Портфолио Даниила Шибанова — AI/Product Engineer. Агентные системы, финансовая аналитика и developer tools.";
+  document.querySelectorAll("[data-i18n]").forEach(element => { element.textContent = english ? getTranslation(element.dataset.i18n) : element.dataset.ruText; });
+  document.querySelectorAll("[data-i18n-html]").forEach(element => { element.innerHTML = english ? getTranslation(element.dataset.i18nHtml) : element.dataset.ruHtml; });
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(element => { element.placeholder = english ? getTranslation(element.dataset.i18nPlaceholder) : element.dataset.ruPlaceholder; });
+  document.querySelectorAll("[data-i18n-aria]").forEach(element => element.setAttribute("aria-label", english ? getTranslation(element.dataset.i18nAria) : element.dataset.ruAria));
+  languageButtons.forEach(button => { const active = button.dataset.language === language; button.classList.toggle("active", active); button.setAttribute("aria-pressed", String(active)); });
+  localStorage.setItem("portfolio-language", language);
+};
+languageButtons.forEach(button => button.addEventListener("click", () => setLanguage(button.dataset.language)));
+setLanguage(localStorage.getItem("portfolio-language") === "en" ? "en" : "ru");
+
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const cards = [...document.querySelectorAll(".project-card")];
 const filterButtons = [...document.querySelectorAll(".filter")];
@@ -207,11 +252,13 @@ const dialogLink = document.querySelector("#dialog-link");
 const openCase = projectId => {
   const project = projectDetails[projectId];
   if (!project) return;
+  const englishCopy = englishProjectDetails[projectId];
+  const english = document.documentElement.lang === "en";
   dialogKicker.textContent = project.kicker;
   dialogTitle.textContent = project.title;
-  dialogLead.textContent = project.lead;
-  dialogProblem.textContent = project.problem;
-  dialogSolution.textContent = project.solution;
+  dialogLead.textContent = english ? englishCopy.lead : project.lead;
+  dialogProblem.textContent = english ? englishCopy.problem : project.problem;
+  dialogSolution.textContent = english ? englishCopy.solution : project.solution;
   dialogStack.replaceChildren(...project.stack.map(item => {
     const chip = document.createElement("span");
     chip.textContent = item;
