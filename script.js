@@ -65,7 +65,8 @@ const englishProjectDetails = {
 };
 
 const translations = { en: {
-  home: "Home", language: "Language selection", close: "Close case", filters: "Project filters",
+  home: "Home", languageSelection: "Language selection", close: "Close case", filters: "Project filters",
+  language: { label: "LANG" },
   nav: { work: "Work", method: "Approach", contact: "Contact" },
   hero: { title: "I build digital", emphasis: "brains.", lead: "I turn complex ideas into AI products that look bold, work reliably, and solve real problems.", cta: "Explore projects", repos: "15 repositories" },
   work: { title: "Projects that<br /><em>speak for me.</em>", lead: "From AI orchestration to a digital twin of the global economy. Open a card to see the mini case study." },
@@ -95,10 +96,12 @@ const setLanguage = language => {
   document.querySelectorAll("[data-i18n-placeholder]").forEach(element => { element.placeholder = english ? getTranslation(element.dataset.i18nPlaceholder) : element.dataset.ruPlaceholder; });
   document.querySelectorAll("[data-i18n-aria]").forEach(element => element.setAttribute("aria-label", english ? getTranslation(element.dataset.i18nAria) : element.dataset.ruAria));
   languageButtons.forEach(button => { const active = button.dataset.language === language; button.classList.toggle("active", active); button.setAttribute("aria-pressed", String(active)); });
-  localStorage.setItem("portfolio-language", language);
+  try { localStorage.setItem("portfolio-language", language); } catch { /* Language still switches when storage is unavailable. */ }
 };
 languageButtons.forEach(button => button.addEventListener("click", () => setLanguage(button.dataset.language)));
-setLanguage(localStorage.getItem("portfolio-language") === "en" ? "en" : "ru");
+let savedLanguage = "ru";
+try { savedLanguage = localStorage.getItem("portfolio-language") === "en" ? "en" : "ru"; } catch { /* Use Russian as the default. */ }
+setLanguage(savedLanguage);
 
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const cards = [...document.querySelectorAll(".project-card")];
